@@ -1,0 +1,9 @@
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\bin\Debug\Discord-RP.exe.config
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\bin\Debug\Discord-RP.exe
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\bin\Debug\Discord-RP.pdb
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\obj\Debug\Discord-RP.csproj.CoreCompileInputs.cache
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\obj\Debug\Discord-RP.exe
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\obj\Debug\Discord-RP.pdb
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\bin\Debug\Newtonsoft.Json.dll
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\bin\Debug\Newtonsoft.Json.xml
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\obj\Debug\Discord-RP.csproj.CopyComplete
