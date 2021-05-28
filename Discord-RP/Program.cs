@@ -43,7 +43,7 @@ namespace Discord_RP
             using (StreamReader r = new StreamReader("minecraft_latest.log"))
             {
                 string f = r.ReadToEnd();
-                int i = f.IndexOf("[Client thread/INFO]: Connecting to ") + 36;
+                int i = f.LastIndexOf("[Client thread/INFO]: Connecting to ") + 36;
                 if (i >= 0)
                 {
                     while (f[i] != ',')
