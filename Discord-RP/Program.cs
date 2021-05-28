@@ -37,8 +37,10 @@ namespace Discord_RP
 
         static string GetCurrentServer()
         {
+            File.Copy("C:/Users/natha/AppData/Roaming/.minecraft/logs/latest.log", "minecraft_latest.log");
+
             string serverName = "";
-            using (StreamReader r = new StreamReader("C:/Users/natha/AppData/Roaming/.minecraft/logs/latest.log"))
+            using (StreamReader r = new StreamReader("minecraft_latest.log"))
             {
                 string f = r.ReadToEnd();
                 int i = f.IndexOf("[Client thread/INFO]: Connecting to ") + 36;
@@ -51,6 +53,9 @@ namespace Discord_RP
                     }
                 }
             }
+
+            File.Delete("minecraft_latest.log");
+
             return serverName;
         }
 

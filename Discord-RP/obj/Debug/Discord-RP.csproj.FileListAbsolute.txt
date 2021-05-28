@@ -7,3 +7,4 @@ D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\obj\Debug\Discord-RP.p
 D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\bin\Debug\Newtonsoft.Json.dll
 D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\bin\Debug\Newtonsoft.Json.xml
 D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\obj\Debug\Discord-RP.csproj.CopyComplete
+D:\Discord_RP\Personal\minecraft-rp\Discord-RP\Discord-RP\obj\Debug\Discord-RP.csprojAssemblyReference.cache
