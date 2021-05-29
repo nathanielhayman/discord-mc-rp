@@ -7,7 +7,34 @@ namespace Discord_RP
 {
     class Program
     {
-        //static void UpdateActivity(Discord.Discord discord, string serverName, string clientName)
+        static void UpdateActivity(Discord.Discord discord, string serverName, string clientName, long startTime)
+        {
+            Console.WriteLine("Updating");
+            var activityManager = discord.GetActivityManager();
+            var activity = new Discord.Activity
+            {
+                Details = $"On {serverName}",
+                State = $"Total Hours: 561",
+                Timestamps =
+                {
+                    Start = startTime
+                },
+                Assets =
+                {
+                    LargeImage = "logo",
+                    SmallImage = "avatar",
+                    SmallText = clientName
+                }
+            };
+
+            activityManager.UpdateActivity(activity, (res) =>
+            {
+                if (res == Discord.Result.Ok)
+                    Console.WriteLine("***UPDATED ACTIVITY***");
+                else
+                    Console.WriteLine("Could not update activity");
+            });
+        }
 
         static string GetCurrentServer()
         {
@@ -63,49 +90,21 @@ namespace Discord_RP
 
             string serverName = GetCurrentServer();
             string clientName = GetClientName();
+            long startTime = DateTimeOffset.Now.ToUnixTimeSeconds();
 
             Console.WriteLine("Retrieved user -- Name: {0}, Current Server: {1}", clientName, serverName);
 
             var discord = new Discord.Discord(Int64.Parse(config.CLIENT_ID.ToString()), (UInt64)Discord.CreateFlags.Default);
             discord.SetLogHook(Discord.LogLevel.Debug, (level, message) =>
             {
-                Console.WriteLine("Log[{0}] {1}", level, message);
+                Console.WriteLine("[{0}] {1}", level, message);
             });
 
-            var activityManager = discord.GetActivityManager();
-            var activity = new Discord.Activity
+            while (true)
             {
-                Details = "Playing GameName",
-                State = $"On {serverName}",
-                Assets =
-                {
-                    LargeImage = "logo",
-                    LargeText = "Playing Minecraft ~ GameName",
-                    SmallImage = "avatar",
-                    SmallText = clientName
-                }
-            };
-
-            Console.WriteLine(activity.Assets.SmallImage);
-
-            Console.WriteLine(activity.ToString());
-
-            activityManager.UpdateActivity(activity, (res) =>
-            {
-                if (res == Discord.Result.Ok)
-                    Console.WriteLine("***UPDATED ACTIVITY***");
-                else
-                    Console.WriteLine("Could not update activity");
-            });
-
-            Console.WriteLine("after");
-
-            //UpdateActivity(discord, serverName, clientName);
-
-            while (Console.ReadKey().Key != ConsoleKey.Enter)
-            {
+                UpdateActivity(discord, serverName, clientName, startTime);
                 discord.RunCallbacks();
-                System.Threading.Thread.Sleep(1000 / 60);
+                System.Threading.Thread.Sleep(100000 / 60);
             }
         }
     }
