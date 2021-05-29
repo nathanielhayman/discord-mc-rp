@@ -9,7 +9,7 @@ namespace Discord_RP
     {
         static void UpdateActivity(Discord.Discord discord, string serverName, string clientName, long startTime)
         {
-            Console.WriteLine("Updating");
+            Console.WriteLine(serverName);
             var activityManager = discord.GetActivityManager();
             var activity = new Discord.Activity
             {
@@ -102,9 +102,9 @@ namespace Discord_RP
 
             while (true)
             {
-                UpdateActivity(discord, serverName, clientName, startTime);
+                UpdateActivity(discord, GetCurrentServer(), clientName, startTime);
                 discord.RunCallbacks();
-                System.Threading.Thread.Sleep(100000 / 60);
+                System.Threading.Thread.Sleep(500000 / 60);
             }
         }
     }
